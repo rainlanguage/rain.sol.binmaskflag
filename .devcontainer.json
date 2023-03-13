@@ -8,5 +8,10 @@
   },
   "image": "ghcr.io/cachix/devenv:latest",
   "overrideCommand": false,
-  "updateContentCommand": "devenv ci"
+  "updateContentCommand": "devenv ci",
+  "hostRequirements": {
+    "cpus": 8,
+    "memory": "8gb",
+    "storage": "64gb"
+  }
 }
