@@ -13,7 +13,7 @@
   enterShell = ''
     export CARGO_INSTALL_ROOT="$PWD/.cargo"
     export PATH="$PWD/.cargo/bin:$PATH"
-    cargo install --git https://github.com/foundry-rs/foundry foundry-cli anvil chisel --bins --locked
+    cargo install --jobs=4 --git https://github.com/foundry-rs/foundry foundry-cli anvil chisel --bins --locked
   '';
 
   # https://devenv.sh/languages/
