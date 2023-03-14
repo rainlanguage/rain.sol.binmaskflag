@@ -1,4 +1,4 @@
 {
-  "image": "thedavidmeister/binmaskflag:a1",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "overrideCommand": false
 }
