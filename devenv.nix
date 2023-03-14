@@ -11,8 +11,7 @@
   scripts.hello.exec = "echo hello from $GREET";
 
   enterShell = ''
-  echo "foo"
-  export
+  export PATH="$PATH:$USER/.foundry/bin"
   '';
 
   # https://devenv.sh/languages/
