@@ -1,4 +1,5 @@
 FROM mcr.microsoft.com/devcontainers/universal:linux
+USER root
 RUN curl -L https://foundry.paradigm.xyz | bash
 RUN whoami
 RUN cat /root/.bashrc
