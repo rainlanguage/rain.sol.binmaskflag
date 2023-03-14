@@ -14,4 +14,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - run: docker build -t rainprotocol/binmaskflag:latest .
-      # - run: docker push gildlab/ipfs-node:${{ matrix.box }}
+      - run: docker push rainprotocol/binmaskflag
