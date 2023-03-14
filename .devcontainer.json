@@ -6,7 +6,7 @@
       ]
     }
   },
-  "image": "ghcr.io/cachix/devenv:latest",
+  "image": "thedavidmeister/binmaskflag:latest",
   "overrideCommand": false,
   "updateContentCommand": "devenv ci",
   "hostRequirements": {
