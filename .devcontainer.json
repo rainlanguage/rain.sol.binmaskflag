@@ -1,4 +1,4 @@
 {
-  "image": "ghcr.io/foundry-rs/foundry:latest",
+  "image": "thedavidmeister/binmaskflag",
   "overrideCommand": false
 }
