@@ -12,7 +12,7 @@
 
   enterShell = ''
   echo "foo"
-  export PATH="$PATH:$USER/.foundry/bin"
+  export
   '';
 
   # https://devenv.sh/languages/
