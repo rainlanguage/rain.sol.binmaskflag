@@ -11,6 +11,7 @@
   scripts.hello.exec = "echo hello from $GREET";
 
   enterShell = ''
+  echo "foo"
   export PATH="$PATH:$USER/.foundry/bin"
   '';
 
