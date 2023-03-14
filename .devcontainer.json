@@ -1,3 +1,10 @@
 {
-  "image": "thedavidmeister/binmaskflag:a2"
+"image": "thedavidmeister/binmaskflag:a2",
+"customizations": {
+	"vscode": {
+		"extensions": [
+			"JuanBlanco.solidity"
+		]
+	}
+}
 }
