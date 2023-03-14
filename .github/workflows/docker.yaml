@@ -13,5 +13,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - run: docker build -t rainprotocol/binmaskflag:latest .
-      - run: docker push rainprotocol/binmaskflag
+      - run: docker build -t thedavidmeister/binmaskflag:latest .
+      - run: docker push thedavidmeister/binmaskflag
