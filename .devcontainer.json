@@ -1,4 +1,3 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "overrideCommand": false
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu"
 }
