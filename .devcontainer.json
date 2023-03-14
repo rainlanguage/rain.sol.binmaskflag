@@ -1,4 +1,4 @@
 {
-  "image": "thedavidmeister/binmaskflag",
+  "image": "thedavidmeister/binmaskflag:latest",
   "overrideCommand": false
 }
