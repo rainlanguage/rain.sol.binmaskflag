@@ -1,5 +1,5 @@
 {
-"image": "thedavidmeister/binmaskflag:a2",
+"image": "rainprotocol/devcontainer:foundry",
 "customizations": {
 	"vscode": {
 		"extensions": [
