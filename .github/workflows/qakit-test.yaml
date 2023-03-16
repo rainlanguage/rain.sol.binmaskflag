@@ -1,7 +1,6 @@
-name: test
+name: QAKit test
 
-on:
-  push:
+on: [push]
 
 env:
   FOUNDRY_PROFILE: ci
@@ -11,7 +10,7 @@ jobs:
     strategy:
       fail-fast: true
 
-    name: Foundry project
+    name: QAKit Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,13 +22,18 @@ jobs:
         with:
           version: nightly
 
+      - name: Run Forge fmt
+        run: forge fmt --check
+        id: fmt
+
       - name: Run Forge build
-        run: |
-          forge --version
-          forge build --sizes
+        run: forge build --sizes
         id: build
 
       - name: Run Forge tests
-        run: |
-          forge test -vvv
+        run: forge test -vvv
         id: test
+
+      - name: Check gas snapshots
+        run: forge snapshot --check
+        id: snapshot
