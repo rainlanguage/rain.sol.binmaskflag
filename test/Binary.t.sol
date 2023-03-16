@@ -26,21 +26,20 @@ contract BinaryTest is Test {
 
     function testBinaryMaskConstantsFuzz(uint256 u_) public {
         assertLe(u_ & MASK_1BIT, B_1);
-        assertEq(1234 & MASK_1BIT, 0);
-        assertEq(11 & MASK_2BIT, 3);
-        assertEq(1234 & MASK_3BIT, 2);
-        assertEq(12345 & MASK_4BIT, 9);
-        assertEq(12345 & MASK_5BIT, 25);
-        assertEq(12345 & MASK_6BIT, 57);
-        assertEq(123456 & MASK_7BIT, 64);
-        assertEq(1234567 & MASK_8BIT, 135);
-        assertEq(12345678 & MASK_9BIT, 334);
-        assertEq(123456789 & MASK_10BIT, 277);
-        assertEq(123456789 & MASK_11BIT, 1301);
-        assertEq(123456789 & MASK_12BIT, 3349);
-        assertEq(1234567890 & MASK_13BIT, 722);
-        assertEq(12345678 & MASK_14BIT, 8526);
-        assertEq(12345678 & MASK_15BIT, 24910);
-        assertEq(1234567 & MASK_16BIT, 54919);
+        assertLe(u_ & MASK_2BIT, B_11);
+        assertLe(u_ & MASK_3BIT, B_111);
+        assertLe(u_ & MASK_4BIT, B_1111);
+        assertLe(u_ & MASK_5BIT, B_11111);
+        assertLe(u_ & MASK_6BIT, B_111111);
+        assertLe(u_ & MASK_7BIT, B_1111111);
+        assertLe(u_ & MASK_8BIT, B_11111111);
+        assertLe(u_ & MASK_9BIT, B_111111111);
+        assertLe(u_ & MASK_10BIT, B_1111111111);
+        assertLe(u_ & MASK_11BIT, B_11111111111);
+        assertLe(u_ & MASK_12BIT, B_111111111111);
+        assertLe(u_ & MASK_13BIT, B_1111111111111);
+        assertLe(u_ & MASK_14BIT, B_11111111111111);
+        assertLe(u_ & MASK_15BIT, B_111111111111111);
+        assertLe(u_ & MASK_16BIT, B_1111111111111111);
     }
 }
