@@ -24,7 +24,8 @@ contract BinaryTest is Test {
         assertEq(B_1111111111111111, 65535);
     }
 
-    function testBinaryMaskConstants() public {
+    function testBinaryMaskConstantsFuzz(uint256 u_) public {
+        assertLe(u_ & MASK_1BIT, B_1);
         assertEq(1234 & MASK_1BIT, 0);
         assertEq(11 & MASK_2BIT, 3);
         assertEq(1234 & MASK_3BIT, 2);
