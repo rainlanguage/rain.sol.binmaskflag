@@ -1,0 +1,2 @@
+BinaryTest:testBConstants() (gas: 1101)
+BinaryTest:testBinaryMaskConstantsFuzz(uint256) (runs: 256, μ: 1303, ~: 1303)
