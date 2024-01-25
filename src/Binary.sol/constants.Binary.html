@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Binary constants</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../book.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../index.html">Home</a></li><li class="chapter-item affix "><li class="part-title">src</li><li class="chapter-item expanded "><a href="../../src/Binary.sol/constants.Binary.html" class="active">Binary constants</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/rainlanguage/sol.lib.binmaskflag" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="constants"><a class="header" href="#constants">Constants</a></h1>
+<p><a href="https://github.com/rainlanguage/sol.lib.binmaskflag/blob/6ded2e7178524b7c5f5c0f9e54ea77a18aa55ea9/src/Binary.sol">Git Source</a></p>
+<h3 id="b_1"><a class="header" href="#b_1">B_1</a></h3>
+<p><em>Binary 1.</em></p>
+<pre><code class="language-solidity">uint256 constant B_1 = 2 ** 1 - 1;
+</code></pre>
+<h3 id="b_11"><a class="header" href="#b_11">B_11</a></h3>
+<p><em>Binary 11.</em></p>
+<pre><code class="language-solidity">uint256 constant B_11 = 2 ** 2 - 1;
+</code></pre>
+<h3 id="b_111"><a class="header" href="#b_111">B_111</a></h3>
+<p><em>Binary 111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_111 = 2 ** 3 - 1;
+</code></pre>
+<h3 id="b_1111"><a class="header" href="#b_1111">B_1111</a></h3>
+<p><em>Binary 1111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_1111 = 2 ** 4 - 1;
+</code></pre>
+<h3 id="b_11111"><a class="header" href="#b_11111">B_11111</a></h3>
+<p><em>Binary 11111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_11111 = 2 ** 5 - 1;
+</code></pre>
+<h3 id="b_111111"><a class="header" href="#b_111111">B_111111</a></h3>
+<p><em>Binary 111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_111111 = 2 ** 6 - 1;
+</code></pre>
+<h3 id="b_1111111"><a class="header" href="#b_1111111">B_1111111</a></h3>
+<p><em>Binary 1111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_1111111 = 2 ** 7 - 1;
+</code></pre>
+<h3 id="b_11111111"><a class="header" href="#b_11111111">B_11111111</a></h3>
+<p><em>Binary 11111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_11111111 = 2 ** 8 - 1;
+</code></pre>
+<h3 id="b_111111111"><a class="header" href="#b_111111111">B_111111111</a></h3>
+<p><em>Binary 111111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_111111111 = 2 ** 9 - 1;
+</code></pre>
+<h3 id="b_1111111111"><a class="header" href="#b_1111111111">B_1111111111</a></h3>
+<p><em>Binary 1111111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_1111111111 = 2 ** 10 - 1;
+</code></pre>
+<h3 id="b_11111111111"><a class="header" href="#b_11111111111">B_11111111111</a></h3>
+<p><em>Binary 11111111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_11111111111 = 2 ** 11 - 1;
+</code></pre>
+<h3 id="b_111111111111"><a class="header" href="#b_111111111111">B_111111111111</a></h3>
+<p><em>Binary 111111111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_111111111111 = 2 ** 12 - 1;
+</code></pre>
+<h3 id="b_1111111111111"><a class="header" href="#b_1111111111111">B_1111111111111</a></h3>
+<p><em>Binary 1111111111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_1111111111111 = 2 ** 13 - 1;
+</code></pre>
+<h3 id="b_11111111111111"><a class="header" href="#b_11111111111111">B_11111111111111</a></h3>
+<p><em>Binary 11111111111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_11111111111111 = 2 ** 14 - 1;
+</code></pre>
+<h3 id="b_111111111111111"><a class="header" href="#b_111111111111111">B_111111111111111</a></h3>
+<p><em>Binary 111111111111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_111111111111111 = 2 ** 15 - 1;
+</code></pre>
+<h3 id="b_1111111111111111"><a class="header" href="#b_1111111111111111">B_1111111111111111</a></h3>
+<p><em>Binary 1111111111111111.</em></p>
+<pre><code class="language-solidity">uint256 constant B_1111111111111111 = 2 ** 16 - 1;
+</code></pre>
+<h3 id="mask_1bit"><a class="header" href="#mask_1bit">MASK_1BIT</a></h3>
+<p><em>Bitmask for 1 bit.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_1BIT = B_1;
+</code></pre>
+<h3 id="mask_2bit"><a class="header" href="#mask_2bit">MASK_2BIT</a></h3>
+<p><em>Bitmask for 2 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_2BIT = B_11;
+</code></pre>
+<h3 id="mask_3bit"><a class="header" href="#mask_3bit">MASK_3BIT</a></h3>
+<p><em>Bitmask for 3 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_3BIT = B_111;
+</code></pre>
+<h3 id="mask_4bit"><a class="header" href="#mask_4bit">MASK_4BIT</a></h3>
+<p><em>Bitmask for 4 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_4BIT = B_1111;
+</code></pre>
+<h3 id="mask_5bit"><a class="header" href="#mask_5bit">MASK_5BIT</a></h3>
+<p><em>Bitmask for 5 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_5BIT = B_11111;
+</code></pre>
+<h3 id="mask_6bit"><a class="header" href="#mask_6bit">MASK_6BIT</a></h3>
+<p><em>Bitmask for 6 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_6BIT = B_111111;
+</code></pre>
+<h3 id="mask_7bit"><a class="header" href="#mask_7bit">MASK_7BIT</a></h3>
+<p><em>Bitmask for 7 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_7BIT = B_1111111;
+</code></pre>
+<h3 id="mask_8bit"><a class="header" href="#mask_8bit">MASK_8BIT</a></h3>
+<p><em>Bitmask for 8 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_8BIT = B_11111111;
+</code></pre>
+<h3 id="mask_9bit"><a class="header" href="#mask_9bit">MASK_9BIT</a></h3>
+<p><em>Bitmask for 9 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_9BIT = B_111111111;
+</code></pre>
+<h3 id="mask_10bit"><a class="header" href="#mask_10bit">MASK_10BIT</a></h3>
+<p><em>Bitmask for 10 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_10BIT = B_1111111111;
+</code></pre>
+<h3 id="mask_11bit"><a class="header" href="#mask_11bit">MASK_11BIT</a></h3>
+<p><em>Bitmask for 11 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_11BIT = B_11111111111;
+</code></pre>
+<h3 id="mask_12bit"><a class="header" href="#mask_12bit">MASK_12BIT</a></h3>
+<p><em>Bitmask for 12 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_12BIT = B_111111111111;
+</code></pre>
+<h3 id="mask_13bit"><a class="header" href="#mask_13bit">MASK_13BIT</a></h3>
+<p><em>Bitmask for 13 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_13BIT = B_1111111111111;
+</code></pre>
+<h3 id="mask_14bit"><a class="header" href="#mask_14bit">MASK_14BIT</a></h3>
+<p><em>Bitmask for 14 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_14BIT = B_11111111111111;
+</code></pre>
+<h3 id="mask_15bit"><a class="header" href="#mask_15bit">MASK_15BIT</a></h3>
+<p><em>Bitmask for 15 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_15BIT = B_111111111111111;
+</code></pre>
+<h3 id="mask_16bit"><a class="header" href="#mask_16bit">MASK_16BIT</a></h3>
+<p><em>Bitmask for 16 bits.</em></p>
+<pre><code class="language-solidity">uint256 constant MASK_16BIT = B_1111111111111111;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../solidity.min.js"></script>
+
+
+    </div>
+    </body>
+</html>
