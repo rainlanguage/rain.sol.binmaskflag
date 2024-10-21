@@ -22,6 +22,8 @@ contract BinaryTest is Test {
         assertEq(B_11111111111111, 16383);
         assertEq(B_111111111111111, 32767);
         assertEq(B_1111111111111111, 65535);
+        assertEq(B_11111111111111111111111111111111, type());
+        assertEq(B_1111111111111111111111111111111111111111111111111111111111111111, 1);
     }
 
     function testBinaryMaskConstantsFuzz(uint256 u_) public {
@@ -41,5 +43,7 @@ contract BinaryTest is Test {
         assertLe(u_ & MASK_14BIT, B_11111111111111);
         assertLe(u_ & MASK_15BIT, B_111111111111111);
         assertLe(u_ & MASK_16BIT, B_1111111111111111);
+        assertLe(u_ & MASK_32BIT, type(uint32).max);
+        assertLe(u_ & MASK_64BIT, type(uint64).max)
     }
 }
