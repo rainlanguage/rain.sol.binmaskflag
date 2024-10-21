@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: CAL
+// SPDX-License-Identifier: LicenseRef-DCL-1.0
+// SPDX-FileCopyrightText: Copyright (c) 2020 thedavidmeister
 pragma solidity ^0.8.18;
 
 /// @dev Binary 1.
@@ -33,6 +34,10 @@ uint256 constant B_11111111111111 = 2 ** 14 - 1;
 uint256 constant B_111111111111111 = 2 ** 15 - 1;
 /// @dev Binary 1111111111111111.
 uint256 constant B_1111111111111111 = 2 ** 16 - 1;
+/// @dev Binary 32 1's.
+uint256 constant B_11111111111111111111111111111111 = type(uint32).max;
+/// @dev Binary 64 1's.
+uint256 constant B_1111111111111111111111111111111111111111111111111111111111111111 = type(uint64).max;
 
 /// @dev Bitmask for 1 bit.
 uint256 constant MASK_1BIT = B_1;
@@ -66,3 +71,7 @@ uint256 constant MASK_14BIT = B_11111111111111;
 uint256 constant MASK_15BIT = B_111111111111111;
 /// @dev Bitmask for 16 bits.
 uint256 constant MASK_16BIT = B_1111111111111111;
+/// @dev Bitmask for 32 bits.
+uint256 constant MASK_32BIT = B_11111111111111111111111111111111;
+/// @dev Bitmask for 64 bits.
+uint256 constant MASK_64BIT = B_1111111111111111111111111111111111111111111111111111111111111111;
